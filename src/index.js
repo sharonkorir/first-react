@@ -7,9 +7,8 @@ function Booklist() {
   return (
     <section className="booklist">
       {books.map((book) => {
-        const { img, title, author, id } = book;
         // console.log(book);
-        return <Book img={img} title={title} author={author} key={id} />;
+        return <Book {...book} key={book.id} />;
       })}
     </section>
   );
@@ -31,8 +30,10 @@ const books = [
 ];
 
 // book component
-const Book = ({ img, title, author }) => {
-  // console.log(props);
+const Book = (props) => {
+  const { img, title, author } = props;
+
+  console.log(props);
 
   return (
     <article className="book">
