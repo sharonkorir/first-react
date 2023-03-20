@@ -6,6 +6,7 @@ import "./index.css";
 function Booklist() {
   return (
     <section className="booklist">
+      <EventExamples />
       {books.map((book) => {
         // console.log(book);
         return <Book {...book} key={book.id} />;
@@ -13,6 +14,35 @@ function Booklist() {
     </section>
   );
 }
+
+// event example
+const EventExamples = () => {
+  const handleFormInput = (event) => {
+    console.log("handle form input");
+  };
+  const handleButtonClick = (event) => {
+    alert("handle button click");
+  };
+  const handleFormSubmissions = (event) => {
+    event.preventDefault();
+    alert("form submitted");
+  };
+
+  return (
+    <section>
+      <form action="" onSubmit={handleFormSubmissions}>
+        <h2>Typical form</h2>
+        <input
+          type="text"
+          style={{ margin: "1rem 0" }}
+          name="example"
+          onChange={handleFormInput}
+        />
+        <button onClick={handleButtonClick}>click me</button>
+      </form>
+    </section>
+  );
+};
 
 const books = [
   {
@@ -33,7 +63,7 @@ const books = [
 const Book = (props) => {
   const { img, title, author } = props;
 
-  console.log(props);
+  // console.log(props);
 
   return (
     <article className="book">
