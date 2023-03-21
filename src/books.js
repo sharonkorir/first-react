@@ -23,4 +23,3 @@ const books = [
 ];
 
 export default books;
-// sk - tpCTot9ZkPB04RgWEayXT3BlbkFJ7Or85lwhdJF30RBbpaG9;
