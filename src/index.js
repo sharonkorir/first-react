@@ -6,13 +6,16 @@ import books from "./books";
 import Book from "./Book";
 function Booklist() {
   return (
-    <section className="booklist">
-      {/* <EventExamples /> */}
-      {books.map((book) => {
-        // console.log(book);
-        return <Book {...book} key={book.id} />;
-      })}
-    </section>
+    <React.Fragment>
+      <h1>Amazon Best Sellers</h1>
+      <section className="booklist">
+        {/* <EventExamples /> */}
+        {books.map((book, index) => {
+          // console.log(book);
+          return <Book {...book} key={book.id} number={index} />;
+        })}
+      </section>
+    </React.Fragment>
   );
 }
 
